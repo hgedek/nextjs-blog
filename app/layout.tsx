@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { baseUrl } from '@/lib/sitemap'
+import Footer from '@/components/footer'
+import { Navbar } from '@/components/nav'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -44,7 +46,9 @@ export default function RootLayout({
       className={cx(GeistSans.variable, GeistMono.variable, "antialiased text-black bg-white dark:text-white dark:bg-black")}>
       <body className='antialiased max-w-2xl mx-4 mt-8 lg:mx-auto'>
         <main className="flex flex-col px-2 md:px-0 mt-6 min-w-0 flex-auto">
+          <Navbar />
           {children}
+          <Footer/>
         </main>
       </body>
     </html>
